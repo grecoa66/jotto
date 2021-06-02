@@ -10,8 +10,8 @@ const GuessedWords = ({ guessedWords }) => {
       ) : (
         <div data-test="guessed-words-list">
           <h3>Guessed Words</h3>
-          <table>
-            <thead>
+          <table className="table table-hover table-sm">
+            <thead className="table-light">
               <tr>
                 <th>Guess</th>
                 <th>Matching Letters</th>
