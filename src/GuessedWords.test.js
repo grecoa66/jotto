@@ -22,7 +22,7 @@ describe("if there are no words guessed", () => {
     const component = findByTestAttr(wrapper, "component-guessed-words");
     expect(component.length).toBe(1);
   });
-  test("renders instructions to guess a word", () => {
+  test("renders instructions to guess a words", () => {
     const component = findByTestAttr(wrapper, "component-instructions");
     expect(component.text().length).not.toBe(0);
   });
