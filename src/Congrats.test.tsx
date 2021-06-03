@@ -1,19 +1,19 @@
 import { shallow } from "enzyme";
-import Congrats from "./Congrats";
+import Congrats, { CongratsProps } from "./Congrats";
 import { findByTestAttr } from "../test/testUtils";
 
 /**
  * Factory function to create a shallow wrapper for the Congrats component.
  * @function setup
- * @param {object} props - Component props specific to setup
+ * @param {CongratsProps} props - Component props specific to setup
  * @returns {ShallowWrapper}
  */
-const setup = (props = {}) => {
+const setup = (props: CongratsProps) => {
   return shallow(<Congrats {...props} />);
 };
 
 test("renders without error", () => {
-  const wrapper = setup();
+  const wrapper = setup({ success: false });
   const component = findByTestAttr(wrapper, "component-congrats");
   expect(component.length).toBe(1);
 });

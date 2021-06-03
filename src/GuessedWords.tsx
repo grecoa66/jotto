@@ -1,6 +1,13 @@
-import React from "react";
+interface Guess {
+  guessedWord: string;
+  letterMatchCount: number;
+}
 
-const GuessedWords = ({ guessedWords }) => {
+export interface GuessedWordsProps {
+  guessedWords: Array<Guess>;
+}
+
+const GuessedWords = ({ guessedWords }: GuessedWordsProps) => {
   return (
     <div data-test="component-guessed-words">
       {guessedWords.length === 0 ? (

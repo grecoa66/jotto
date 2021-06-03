@@ -1,19 +1,19 @@
 import React from "react";
-import { shallow } from "enzyme";
+import { shallow, ShallowWrapper } from "enzyme";
 import { findByTestAttr } from "../test/testUtils";
-import GuessedWords from "./GuessedWords";
+import GuessedWords, { GuessedWordsProps } from "./GuessedWords";
 
 /**
  * Factory function to create a shallow component wrapper.
- * @param {object} props - component props specific to set up
+ * @param {GuessedWordsProps} props - component props specific to set up
  * @returns {ShallowWrapper}
  */
-const setup = (props = {}) => {
+const setup = (props: GuessedWordsProps) => {
   return shallow(<GuessedWords {...props} />);
 };
 
 describe("if there are no words guessed", () => {
-  let wrapper;
+  let wrapper: ShallowWrapper;
   beforeEach(() => {
     wrapper = setup({ guessedWords: [] });
   });
@@ -29,7 +29,7 @@ describe("if there are no words guessed", () => {
 });
 
 describe("if there are words guessed", () => {
-  let wrapper;
+  let wrapper: ShallowWrapper;
   beforeEach(() => {
     wrapper = setup({
       guessedWords: [

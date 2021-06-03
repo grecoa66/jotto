@@ -1,10 +1,12 @@
-import React from "react";
+export interface CongratsProps {
+  success: boolean;
+}
 /**
  * React functional component to display congratulations message
  * @param {Object} - React Props
  * @returns {JSX.Element} - Rendered component if success is true, null if not
  */
-const Congrats = ({ success }) => {
+const Congrats = ({ success }: CongratsProps) => {
   return (
     <div data-test="component-congrats">
       {success && (
