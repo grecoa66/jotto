@@ -1,4 +1,4 @@
-import { getLetterMatchCount, createWordSet } from "./index";
+import { getLetterMatchCount } from "./index";
 
 describe("getLetterMatchCount", () => {
   const secretWord = "hockey";

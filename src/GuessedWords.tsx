@@ -1,10 +1,10 @@
-interface Guess {
+export interface Guess {
   guessedWord: string;
   letterMatchCount: number;
 }
 
 export interface GuessedWordsProps {
-  guessedWords: Array<Guess>;
+  guessedWords: Guess[];
 }
 
 const GuessedWords = ({ guessedWords }: GuessedWordsProps) => {

@@ -32,6 +32,7 @@ const Input = ({ success, secretWord }: InputProps) => {
             className="btn btn-primary mb-2"
             onClick={(event) => {
               event.preventDefault();
+              checkSecretWord(currentGuess, "popcorn");
               setCurrentGuess("");
             }}
           >
