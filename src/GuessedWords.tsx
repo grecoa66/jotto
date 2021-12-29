@@ -8,6 +8,7 @@ export interface GuessedWordsProps {
 }
 
 const GuessedWords = ({ guessedWords }: GuessedWordsProps) => {
+  console.log("guessedWords: ", guessedWords);
   return (
     <div data-test="component-guessed-words">
       {guessedWords.length === 0 ? (

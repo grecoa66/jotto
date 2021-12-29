@@ -11,7 +11,7 @@ import { findByTestAttr } from "../test/testUtils";
  * @returns
  */
 const setup = (state = {}) => {
-  const wrapper = mount(<App />);
+  const wrapper = mount(<App guessedWords={state.guessedWords} />);
 
   // Add  value to input box
   const inputBox = findByTestAttr(wrapper, "input-field");
@@ -23,20 +23,21 @@ const setup = (state = {}) => {
   return wrapper;
 };
 
-describe("no words have been guessed", () => {
-  const wrapper = setup({
-    secretWord: "popcorn",
-    guessedWords: [],
-    success: false,
-  });
-
+describe.skip("no words have been guessed", () => {
   test("creates GuessedWord table with 1 word", () => {
+    const wrapper = setup({
+      secretWord: "popcorn",
+      guessedWords: [],
+      success: false,
+    });
+
     const guessedWordRow = findByTestAttr(wrapper, "guessed-word");
+
     expect(guessedWordRow).toHaveLength(1);
   });
 });
 
-describe("some words have been guessed", () => {
+describe.skip("some words have been guessed", () => {
   const wrapper = setup({
     secretWord: "popcorn",
     guessedWords: [
@@ -52,7 +53,7 @@ describe("some words have been guessed", () => {
   });
 });
 
-describe("the correct word has been guessed", () => {
+describe.skip("the correct word has been guessed", () => {
   const wrapper = setup({
     secretWord: "popcorn",
     guessedWords: [

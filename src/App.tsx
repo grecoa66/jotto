@@ -1,13 +1,18 @@
+import { useEffect } from "react";
 import "./App.css";
+import { getSecretWord } from "./actions";
 import Congrats from "./Congrats";
 import GuessedWords, { Guess } from "./GuessedWords";
 import Input from "./Input";
 
-function App() {
+function App({ guessedWords = [] }) {
   // TODO: move to redux or context
   const success = false;
   const secretWord = "popcorn";
-  const guessedWords: Guess[] = [];
+
+  useEffect(() => {
+    getSecretWord();
+  }, []);
 
   return (
     <div className="App" data-test="component-app">

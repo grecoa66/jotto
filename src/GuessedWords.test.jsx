@@ -8,12 +8,12 @@ import GuessedWords, { GuessedWordsProps } from "./GuessedWords";
  * @param {GuessedWordsProps} props - component props specific to set up
  * @returns {ShallowWrapper}
  */
-const setup = (props: GuessedWordsProps) => {
+const setup = (props) => {
   return shallow(<GuessedWords {...props} />);
 };
 
 describe("if there are no words guessed", () => {
-  let wrapper: ShallowWrapper;
+  let wrapper;
   beforeEach(() => {
     wrapper = setup({ guessedWords: [] });
   });
@@ -29,7 +29,7 @@ describe("if there are no words guessed", () => {
 });
 
 describe("if there are words guessed", () => {
-  let wrapper: ShallowWrapper;
+  let wrapper;
   beforeEach(() => {
     wrapper = setup({
       guessedWords: [
